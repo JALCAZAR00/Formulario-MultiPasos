@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li class="first-step-icon">1</li>
+        <li class="second-step-icon">2</li>
+        <li class="third-step-icon">3</li>
+        <li class="four-step-icon">4</li>
+      </ul>
+      <div class="steps-info inactive">
+        <div class="step-one">
+          <h2>Step 1</h2>
+          <p>Your info</p>
+        </div>
+        <div class="step-two">
+          <h2>Step 2</h2>
+          <p>Select Plan</p>
+        </div>
+        <div class="step-three">
+          <h2>Step 3</h2>
+          <p>Add-ons</p>
+        </div>
+        <div class="step-three">
+          <h2>Step 4</h2>
+          <p>Summary</p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+  <!-------------------------- section-info ------------------------>
+  <section class="main-section">
+      <h1>Personal info</h1>
+      <h2>Please provide your name, email address, and phone number.</h2>
+      
+      <div class="section-info">
+          <form class="personal-info-form">
+            <label for="name">Name
+              <span class="required name">This field is required!</span>
+            </label>
+            <input id="name" type="text" autocomplete="name" placeholder="e.g. Stephen King">
+            <label for="email">Email Address
+              <span class="required email">This field is required!</span>
+            </label>
+            <input id="email" type="email" autocomplete="email" placeholder="e.g. stephenking@lorem.com">
+            <label for="phone">Phone Number
+              <span class="required phone">This field is required!</span>
+            </label>
+            <input id="phone" type="tel" name="telefono" autocomplete="tel" placeholder="e.g. +1 234 567 890">
+          </form>
+      </div>
+  </section>  
+  
+  </main>
+
+  <!-------------------------- section-plan ------------------------>
+  <footer>
+    <section class="buttons">
+      <button type="button" class="back">Go Back</button>
+      <button type="submit" class="next">Next Step</button>
+    </section>
+  </footer>
+
+  <script src="./javascript/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+:root{
+//Primary
+--primary-one-color: hsl(213, 96%, 18%);
+--primary-second-color: hsl(243, 100%, 62%);
+--primary-third-color: hsl(206, 94%, 87%);
+--primary-four-color: hsla(215, 100%, 97%, 1);
+--alert-color: hsl(354, 84%, 57%);
+
+//Neutral
+--neutral-one-color: hsl(231, 11%, 63%);
+--neutral-second-color: hsl(229, 24%, 87%);
+--neutral-third-color: hsl(217, 100%, 97%);
+--neutral-four-color: hsl(231, 100%, 99%);
+--white: hsl(0, 0%, 100%);
+
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: grid;
+    grid-template-rows: 105px 1fr 50px;
+    font-size: 62.5%;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--font-color-primary);
+}
+.inactive{
+    display: none;
+}

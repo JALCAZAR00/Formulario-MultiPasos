@@ -1,0 +1,46 @@
+footer{
+    width: 100%;
+    height: 10vh;
+    padding: 5px;
+    background-color: var(--white);
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 10px;
+        .back, .next{
+            font-size: .8rem;
+            font-weight: 600;
+            width: 85px;
+            height: 30px;
+            border-radius: .2em;
+            font-family: 'Ubuntu', sans-serif;
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background-color: var(--white); 
+            border: 1px solid var(--neutral-four-color);
+        }
+        .next{
+            border: none;
+            color: var(--white);
+            background-color: var(--primary-one-color);
+        }
+        .back{
+            color: var(--neutral-one-color);
+        }
+        .back:hover{
+            border: none;
+            font-weight: 700;
+            font-size: .9rem;
+            color: var(--white);
+            background-color: var(--primary-one-color);
+        }
+        .next:hover{
+            font-weight: 700;
+            font-size: .9rem;
+            background-color: var(--white);
+            border: 1px solid var(--white);
+            color: var(--primary-one-color);
+        }
+    }
+}
