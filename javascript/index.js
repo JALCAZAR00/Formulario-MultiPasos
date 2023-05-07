@@ -68,6 +68,6 @@ form.addEventListener('click', function(event) {
   }
 
   if (nameInput.value.trim() !== '' && emailInput.value.trim() !== '' && phoneInput.value.trim() !== '') {
-    window.location.href = "../Select-Plan.html";
+    window.location.href = "Select-Plan.html";
   }
 });
