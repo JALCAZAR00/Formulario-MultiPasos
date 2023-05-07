@@ -7,12 +7,12 @@ footer{
         display: flex;
         justify-content: space-between;
         width: 100%;
-        padding: 0 10px;
+        padding: 15px;
         .back, .next{
             font-size: .8rem;
             font-weight: 600;
-            width: 85px;
-            height: 30px;
+            width: 100px;
+            height: 40px;
             border-radius: .2em;
             font-family: 'Ubuntu', sans-serif;
             cursor: pointer;
@@ -34,13 +34,6 @@ footer{
             font-size: .9rem;
             color: var(--white);
             background-color: var(--primary-one-color);
-        }
-        .next:hover{
-            font-weight: 700;
-            font-size: .9rem;
-            background-color: var(--white);
-            border: 1px solid var(--white);
-            color: var(--primary-one-color);
         }
     }
 }

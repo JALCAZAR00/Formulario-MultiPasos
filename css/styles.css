@@ -232,13 +232,13 @@ footer .buttons {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  padding: 0 10px;
+  padding: 15px;
 }
 footer .buttons .back, footer .buttons .next {
   font-size: 0.8rem;
   font-weight: 600;
-  width: 85px;
-  height: 30px;
+  width: 100px;
+  height: 40px;
   border-radius: 0.2em;
   font-family: "Ubuntu", sans-serif;
   cursor: pointer;
@@ -261,13 +261,6 @@ footer .buttons .back:hover {
   font-size: 0.9rem;
   color: var(--white);
   background-color: var(--primary-one-color);
-}
-footer .buttons .next:hover {
-  font-weight: 700;
-  font-size: 0.9rem;
-  background-color: var(--white);
-  border: 1px solid var(--white);
-  color: var(--primary-one-color);
 }
 
 header {
@@ -301,11 +294,11 @@ header nav ul {
   }*/
 }
 header nav ul li {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   margin: 8px;
   padding: 7px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--white);
   text-align: center;
