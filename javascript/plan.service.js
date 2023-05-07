@@ -2,6 +2,7 @@
 const stepNav = document.querySelector('.second-step-icon')
 const btnBack = document.querySelector('.back');
 const btnNext = document.querySelector('.next');
+const modal = document.querySelector('.modal');
 
 //Contenedor de plan
 const arcadeContainer = document.querySelector('.arcade');
@@ -44,26 +45,30 @@ proContainer.addEventListener("click", function() {
     getPlan('pro');
 });
 
+let planActivate = false;
+
 function getPlan(selectedPlan) {
     switch (selectedPlan) {
         case 'arcade':
             resetStyles();
             arcadeContainer.style.border = "1px solid var(--primary-one-color)";
             arcadeContainer.style.backgroundColor = "var(--primary-four-color)";
+            planActivate = true;
             break;
         case 'advanced':
             resetStyles();
             advancedContainer.style.border = "1px solid var(--primary-one-color)";
             advancedContainer.style.backgroundColor = "var(--primary-four-color)";
+            planActivate = true;
             break;
         case 'pro':
             resetStyles()
             proContainer.style.border = "1px solid var(--primary-one-color)";
             proContainer.style.backgroundColor = "var(--primary-four-color)";
+            planActivate = true;
             break;
         default:
-            alert('Plan no válido');
-        break;
+            planActivate = false;
     }
 }
 
@@ -96,7 +101,20 @@ btnSwitch.addEventListener("mousedown", () =>{
     yearlyPricesVisible = !yearlyPricesVisible;
 });
 
+//Evento del boton Next
+btnNext.addEventListener("click", () => {
+    if(planActivate === false){
+        modal.style.display = "flex";
+        setTimeout(function() {
+            // Cerrar alerta
+            modal.style.display = 'none';
+        }, 1500);
+    } else {
+       window.location.href = "./pick-AddsOns.html" 
+    }
+});
+
 //Evento del boton Back
 btnBack.addEventListener("click", () =>{
-    window.location.href = "../index.html";
+    window.location.href = "./index.html";
 });    

@@ -156,4 +156,22 @@ main{
             }
         }
     } 
+    .modal{
+        z-index: 1;
+        position: fixed;
+        top: 1vh;
+        left: 1vw;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 40px;
+        border-radius: .5em;
+        background-color: var(--dark-color);
+        border: 1px solid var(--dark-color);
+        h2{
+            font-size: .8rem;
+            color: var(--neutral-third-color);
+        }
+    }
 }

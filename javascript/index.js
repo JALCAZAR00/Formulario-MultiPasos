@@ -15,7 +15,18 @@ const btnBack = document.querySelector('.back');
 stepNav.style.fontWeight = "600";
 stepNav.style.backgroundColor = "var(--primary-third-color)";
 stepNav.style.color = "var(--primary-color)"; 
-stepNav.style.border = "1px solid var(--primary-third-color)"; 
+stepNav.style.border = "1px solid var(--primary-third-color)";
+
+//Evento boton Back
+btnBack.style.display = "none";
+document.querySelector('.buttons').style.justifyContent = "flex-end";
+
+let emailStatus = false;
+function validarEmail(email) {
+  // Expresión regular para validar el formato de correo electrónico
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
 
 // Evento para detectar cuando el usuario escribe en el input.
 nameInput.addEventListener('blur', function() {
@@ -25,16 +36,20 @@ nameInput.addEventListener('blur', function() {
   } else{
     nameAlert.style.display = 'none';
     nameInput.style.border = "1px solid var(--primary-one-color)";
+    inputStatus = true;
   }
 });
 
 emailInput.addEventListener('blur', function() {
-  if (emailInput.value.trim() === '') {
+  const email = emailInput.value.trim();
+  if (!validarEmail(email)) {
     emailAlert.style.display = 'flex';
     emailInput.style.border = "1px solid var(--alert-color)";
+    emailStatus = false;
   } else{
     emailAlert.style.display = 'none';
     emailInput.style.border = "1px solid var(--primary-one-color)";
+    emailStatus = true;
   }
 });
 
@@ -48,10 +63,9 @@ phoneInput.addEventListener('blur', function() {
   }
 });
 
-// Evento para validar que los campos no esten vacios.
+// Evento para validar los inputs
 form.addEventListener('click', function(event) {
   event.preventDefault();
-
   if (nameInput.value.trim() === '') {
     nameAlert.style.display = 'flex';
     nameInput.style.border = "1px solid var(--alert-color)";
@@ -60,14 +74,15 @@ form.addEventListener('click', function(event) {
   if (emailInput.value.trim() === '') {
     emailAlert.style.display = 'flex';
     emailInput.style.border = "1px solid var(--alert-color)";
+    inputStatus = false;
   }
 
-  if (phoneInput.value.trim() === '') {
+  if (phoneInput.value.length < 10) {
     phoneAlert.style.display = 'flex';
     phoneInput.style.border = "1px solid var(--alert-color)";
   }
 
-  if (nameInput.value.trim() !== '' && emailInput.value.trim() !== '' && phoneInput.value.trim() !== '') {
-    window.location.href = "Select-Plan.html";
+  if (nameInput.value.trim() !== '' && emailInput.value.trim() !== '' && phoneInput.value.length === 10 && emailStatus === true) {
+    window.location.href = "./Select-Plan.html";
   }
 });
