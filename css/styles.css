@@ -218,11 +218,184 @@ main .main-section .section-select-plan .button .switch-button input:checked + .
   -webkit-transform: translateX(20px);
           transform: translateX(20px);
 }
+main .main-section .section-add-ons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+}
+main .main-section .section-add-ons article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 60px;
+  padding: 12px;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 0 5px var(--neutral-second-color);
+          box-shadow: 0 0 5px var(--neutral-second-color);
+  border: 1px solid var(--neutral-one-color);
+}
+main .main-section .section-add-ons article input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 1em;
+  background-color: var(--primary-second-color);
+}
+main .main-section .section-add-ons article div {
+  width: 75%;
+}
+main .main-section .section-add-ons article div h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: var(--primary-one-color);
+}
+main .main-section .section-add-ons article div span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--neutral-one-color);
+}
+main .main-section .section-add-ons article p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary-second-color);
+}
+main .main-section .section-finishing {
+  display: block;
+}
+main .main-section .section-finishing .info-plan {
+  padding: 12px;
+  border-radius: 0.5em 0.5em 0 0;
+  background-color: var(--primary-four-color);
+}
+main .main-section .section-finishing .info-plan h3 {
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+  color: var(--primary-one-color);
+}
+main .main-section .section-finishing .info-plan div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--neutral-second-color);
+}
+main .main-section .section-finishing .info-plan div a {
+  font-size: 0.9rem;
+  color: var(--neutral-one-color);
+}
+main .main-section .section-finishing .info-plan div p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-one-color);
+}
+main .main-section .section-finishing .info-adds {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  height: 20vh;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  border-radius: 0 0 0.5em 0.5em;
+  background-color: var(--primary-four-color);
+}
+main .main-section .section-finishing .info-adds .add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main .main-section .section-finishing .info-adds .add p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--neutral-one-color);
+}
+main .main-section .section-finishing .info-adds .add span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary-one-color);
+}
+main .main-section .section-finishing .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 12px;
+}
+main .main-section .section-finishing .total p {
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: underline;
+  color: var(--neutral-one-color);
+}
+main .main-section .section-finishing .total span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-one-color);
+}
+main .main-section .thanks {
+  text-align: center;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+  padding-top: 15vh;
+}
+main .main-section .thanks img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 12px;
+}
+main .main-section .thanks h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-one-color);
+}
+main .main-section .thanks p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: var(--neutral-one-color);
+}
 main .modal {
   z-index: 1;
   position: fixed;
-  top: 1vh;
-  left: 1vw;
+  top: calc(50% - 60px);
+  left: calc(50% - 70px);
   display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -230,15 +403,18 @@ main .modal {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 120px;
-  height: 40px;
-  border-radius: 0.5em;
-  background-color: var(--dark-color);
-  border: 1px solid var(--dark-color);
+  width: 160px;
+  height: 60px;
+  border-radius: 1em 0;
+  -webkit-box-shadow: -2px 2px 5px var(--dark-color);
+          box-shadow: -2px 2px 5px var(--dark-color);
+  background-color: var(--alert-color);
+  border: 1px solid var(--alert-color);
 }
 main .modal h2 {
-  font-size: 0.8rem;
-  color: var(--neutral-third-color);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--white);
 }
 
 footer {

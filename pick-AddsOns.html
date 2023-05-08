@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Select your plan</title>
+    <title>pick AddOns</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -41,9 +41,34 @@
     </header>
     <main>
         <section class="main-section">
-            <h1>Select your plan</h1>
-            <h2>You have the option of monthly or yearly billing.</h2>
-            
+            <h1>Pick add-ons</h1>
+            <h2>Add-ons help enhance your gaming experience.</h2>
+            <div class="section-add-ons">
+              <article class="online-service">
+                <input type="checkbox" name="online" id="online">
+                <div class="info">
+                  <h3>Online service</h3>
+                  <span>Access to multiplayer games</span>
+                </div>
+                <p>+$1/mo</p>
+              </article>
+              <article class="larger-storage">
+                <input type="checkbox" name="storage" id="storage">
+                <div class="info">
+                  <h3>Larger storage</h3>
+                  <span>Extra 1TB of cloud save</span>
+                </div>
+                <p>+$2/mo</p>
+              </article>
+              <article class="cutomizable-profile">
+                <input type="checkbox" name="customizable" id="customizable">
+                <div class="info">
+                  <h3>Customizable Profile</h3>
+                  <span>Custom theme on your profile</span>
+                </div>
+                <p>+$3/mo</p>
+              </article>
+            </div>
         </section>
     </main>
     <footer>
@@ -53,27 +78,6 @@
         </section>
     </footer>
     <section class="inactive">
-         <!-- Step 3 start -->
-       
-         Pick add-ons
-         Add-ons help enhance your gaming experience.
-       
-         Online service
-         Access to multiplayer games
-         +$1/mo
-       
-         Larger storage
-         Extra 1TB of cloud save
-         +$2/mo
-       
-         Customizable Profile
-         Custom theme on your profile
-         +$2/mo
-       
-         Go Back
-         Next Step
-       
-         <!-- Step 3 end -->
        
          <!-- Step 4 start -->
        
@@ -104,6 +108,6 @@
            Coded by <a href="#">Your Name Here</a>.
          </div>
        </section>
-    <script src=""></script>
+    <script src="./javascript/pick.service.js"></script>
 </body>
 </html>
