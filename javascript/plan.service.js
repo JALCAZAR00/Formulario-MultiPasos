@@ -22,6 +22,41 @@ const infoMonthsPro = document.querySelector('.plan-span-pro');
 //Arreglo para seleccion de plan
 const selectPlans = ['arcade', 'advanced', 'pro'];
 
+const planMonth = [
+    {
+        plan: 'mensual',
+        title: 'Arcade',
+        price: 9
+    },
+    {
+        plan: 'mensual',
+        title: 'Advanced',
+        price: 12
+    },
+    {
+        plan: 'mensual',
+        title: 'Pro',
+        price: 15
+    }
+]
+const planYear = [
+    {
+        plan: 'anual',
+        title: 'Arcade',
+        price: 90
+    },
+    {
+        plan: 'mensual',
+        title: 'Advanced',
+        price: 120
+    },
+    {
+        plan: 'mensual',
+        title: 'Pro',
+        price: 150
+    }
+]
+
 //Elemento del DOM boton switch
 const btnSwitch = document.querySelector('.switch-button');
 
