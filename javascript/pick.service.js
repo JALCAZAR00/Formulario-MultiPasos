@@ -3,23 +3,74 @@ const stepNav = document.querySelector('.third-step-icon')
 const btnBack = document.querySelector('.back');
 const btnNext = document.querySelector('.next');
 
-//
+//Contenedor de adicionales
 const onlineContainer = document.querySelector('.online-service');
 const storageContainer = document.querySelector('.larger-storage');
 const customizableContainer = document.querySelector('.cutomizable-profile');
 
+//Input checkbox de adicionales
 const online = document.getElementById('online');
 const storage = document.getElementById('storage');
 const customizable = document.getElementById('customizable');
 
+//Precio de adicionales
+const onlinePrice = document.querySelector('.price-add-online');
+const storagePrice =  document.querySelector('.price-add-storage');
+const customizablePrice =  document.querySelector('.price-add-custom');
+
 //Arreglo para seleccion de plan
 const selectPlans = ['online', 'storage', 'customizable'];
+
+//Arreglo para exportar los datos seleccionados
+const serviceMonth = [
+    {
+        name: 'Online',
+        price: 1
+    },
+    {
+        name: 'Larger storage',
+        price: 2
+    },
+    {
+        name: 'Customizable profile',
+        price: 3
+    }
+]
+const serviceYear = [
+    {
+        name: 'Online',
+        price: 10
+    },
+    {
+        name: 'Larger storage',
+        price: 20
+    },
+    {
+        name: 'Customizable profile',
+        price: 30
+    }
+]
 
 //Agregar estilos al numero en el que se encuentra.
 stepNav.style.fontWeight = "600";
 stepNav.style.backgroundColor = "var(--primary-third-color)";
 stepNav.style.color = "var(--primary-color)"; 
 stepNav.style.border = "1px solid var(--primary-third-color)";
+
+//Funcion para detectar el tipo de plan seleccionado en la pagina anterior
+let activatePlanYearly = JSON.parse(localStorage.getItem('activatePlanYearly'));
+function getTypePlan(){
+    if(activatePlanYearly === true){
+        onlinePrice.textContent = `+$${10}/yr`;
+        storagePrice.textContent = `+$${20}/yr`;
+        customizablePrice.textContent = `+$${30}/yr`;
+    }else{
+        onlinePrice.textContent = `+$${1}/mo`;
+        storagePrice.textContent = `+$${2}/mo`;
+        customizablePrice.textContent = `+$${3}/mo`; 
+    }
+}
+getTypePlan();
 
 let selectOnline = false;
 let selectStorage = false;
@@ -28,7 +79,8 @@ let selectCustom = false;
 //Evento para seleccionar un ons
 online.addEventListener("click", () => {
     if(selectOnline === false){
-        getAddOns('online')  
+        getAddOns('online')
+        postPlan('online')  
     }else{
         resetStyles('online');
         selectOnline = false;
@@ -37,6 +89,7 @@ online.addEventListener("click", () => {
 storage.addEventListener("click", function() {
     if(selectStorage === false){
         getAddOns('storage')
+        postPlan('storage')
     }else{
         resetStyles('storage');
         selectStorage = false;
@@ -45,6 +98,7 @@ storage.addEventListener("click", function() {
 customizable.addEventListener("click", () => {
     if(selectCustom === false){
         getAddOns('customizable')
+        postPlan('customizable')
     }else{
         resetStyles('customizable');
         selectCustom = false;
@@ -89,6 +143,25 @@ function resetStyles(selectedPlan) {
             customizableContainer.style.backgroundColor = "transparent";
             break;
     }
+}
+
+//Exportar datos de servicios seleccionados
+function postPlan(service){
+    let selectedServices;
+    switch (service) {
+        case 'online':
+            selectedServices = activatePlanYearly ? serviceYear[0] : serviceMonth[0];
+            break;
+        case 'storage':
+            selectedServices = activatePlanYearly ? serviceYear[1] : serviceMonth[1];
+            break;
+        case 'customizable':
+            selectedServices = activatePlanYearly ? serviceYear[2] : serviceMonth[2];
+            break;
+        default : 'No se selecciono ningún servicio'
+            break;
+    }
+    localStorage.setItem('selectedServiceData', JSON.stringify(selectedServices));
 }
 
 //Evento del boton Next

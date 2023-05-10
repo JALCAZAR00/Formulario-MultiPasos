@@ -568,7 +568,7 @@ header nav ul li {
   body header nav .steps-info div h2 {
     font-size: 1rem;
     font-weight: 400;
-    color: var(--neutral-one-color);
+    color: var(--neutral-second-color);
   }
   body header nav .steps-info div p {
     font-size: 1rem;

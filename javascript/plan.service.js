@@ -24,34 +24,34 @@ const selectPlans = ['arcade', 'advanced', 'pro'];
 
 const planMonth = [
     {
-        plan: 'mensual',
+        plan: 'Monthly',
         title: 'Arcade',
         price: 9
     },
     {
-        plan: 'mensual',
+        plan: 'Monthly',
         title: 'Advanced',
         price: 12
     },
     {
-        plan: 'mensual',
+        plan: 'Monthly',
         title: 'Pro',
         price: 15
     }
 ]
 const planYear = [
     {
-        plan: 'anual',
+        plan: 'Yearly',
         title: 'Arcade',
         price: 90
     },
     {
-        plan: 'mensual',
+        plan: 'Yearly',
         title: 'Advanced',
         price: 120
     },
     {
-        plan: 'mensual',
+        plan: 'Yearly',
         title: 'Pro',
         price: 150
     }
@@ -72,12 +72,15 @@ stepNav.style.border = "1px solid var(--primary-third-color)";
 //Evento para seleccionar un plan
 arcadeContainer.addEventListener("click", function() {
     getPlan('arcade');
+    postPlan('arcade');
 });
 advancedContainer.addEventListener("click", function() {
     getPlan('advanced');
+    postPlan('advanced');
 });
 proContainer.addEventListener("click", function() {
     getPlan('pro');
+    postPlan('pro');
 });
 
 let planActivate = false;
@@ -116,6 +119,29 @@ function resetStyles() {
     proContainer.style.backgroundColor = "transparent";
 }
 
+//Exportar información del plan seleccionado
+let activatePlanYearly = false;
+
+function postPlan(plan){
+    let selectedPlan;
+    switch (plan) {
+        case 'arcade':
+            selectedPlan = activatePlanYearly ? planYear[0] : planMonth[0];
+            break;
+        case 'advanced':
+            selectedPlan = activatePlanYearly ? planYear[1] : planMonth[1];
+            break;
+        case 'pro':
+            selectedPlan = activatePlanYearly ? planYear[2] : planMonth[2];
+            break;
+        default:
+            break;
+    }
+    localStorage.setItem('selectedPlanData', JSON.stringify(selectedPlan,));
+    localStorage.setItem('activatePlanYearly', JSON.stringify(activatePlanYearly));
+}
+
+//let activatePlanYearly = JSON.parse(localStorage.getItem('activatePlanYearly'));
 //Eventos del Boton Switch 
 btnSwitch.addEventListener("mousedown", () =>{
     if (yearlyPricesVisible === false) {
@@ -125,6 +151,8 @@ btnSwitch.addEventListener("mousedown", () =>{
         infoMonthsArcade.style.display = "block";
         infoMonthsAdvanced.style.display = "block";
         infoMonthsPro.style.display = "block";
+        activatePlanYearly = true;
+        resetStyles();
     } else{
         priceArcade.textContent = "$9/mo";
         priceAdvanced.textContent = "$12/mo";
@@ -132,6 +160,8 @@ btnSwitch.addEventListener("mousedown", () =>{
         infoMonthsArcade.style.display = "none";
         infoMonthsAdvanced.style.display = "none";
         infoMonthsPro.style.display = "none";
+        activatePlanYearly = false;
+        resetStyles();
     }
     yearlyPricesVisible = !yearlyPricesVisible;
 });
