@@ -44,14 +44,14 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 65vh;
+  min-height: 70vh;
   background-color: var(--primary-four-color);
 }
 main .main-section {
   z-index: 1;
   background-color: white;
   width: 90%;
-  min-height: 75vh;
+  min-height: 60vh;
   padding: 32px 24px;
   margin-bottom: 4vh;
   border-radius: 0.8em;
@@ -115,7 +115,7 @@ main .main-section .section-select-plan {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 main .main-section .section-select-plan article {
   display: -webkit-box;
@@ -225,7 +225,8 @@ main .main-section .section-add-ons {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 12px;
+  gap: 24px;
+  padding-top: 12px;
 }
 main .main-section .section-add-ons article {
   display: -webkit-box;
@@ -394,7 +395,7 @@ main .modal {
   z-index: 1;
   position: fixed;
   top: calc(50% - 60px);
-  left: calc(50% - 70px);
+  left: calc(50% - 100px);
   display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -402,7 +403,7 @@ main .modal {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 160px;
+  width: 200px;
   height: 60px;
   border-radius: 1em 0;
   -webkit-box-shadow: -2px 2px 5px var(--dark-color);
@@ -432,7 +433,7 @@ footer .buttons {
   width: 100%;
   padding: 15px;
 }
-footer .buttons .back, footer .buttons .next {
+footer .buttons .back, footer .buttons .next, footer .buttons .btnInit {
   font-size: 0.8rem;
   font-weight: 600;
   width: 100px;
@@ -459,6 +460,15 @@ footer .buttons .back:hover {
   font-size: 0.9rem;
   color: var(--white);
   background-color: var(--primary-one-color);
+}
+footer .buttons .btnInit {
+  display: none;
+  width: 250px;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: 400s;
+  color: var(--white);
+  background-color: var(--alert-color);
 }
 
 header {

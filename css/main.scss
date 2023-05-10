@@ -2,14 +2,13 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 65vh;
+    min-height: 70vh;
     background-color: var(--primary-four-color);
     .main-section{
         z-index: 1;
         background-color: white;
         width: 90%;
-        //max-width: 350px;
-        min-height: 75vh;
+        min-height: 60vh;
         padding: 32px 24px;
         margin-bottom: 4vh;
         border-radius: .8em;
@@ -64,7 +63,7 @@ main{
         .section-select-plan{
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 12px;
             article{
                 display: flex;
                 align-items: center;
@@ -158,7 +157,8 @@ main{
         .section-add-ons{
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 24px;
+            padding-top: 12px;
             article{
                 display: flex;
                 align-items: center;
@@ -299,11 +299,11 @@ main{
         z-index: 1;
         position: fixed;
         top: calc(50% - 60px);
-        left: calc(50% - 70px);
+        left: calc(50% - 100px);
         display: none;
         align-items: center;
         justify-content: center;
-        width: 160px;
+        width: 200px;
         height: 60px;
         border-radius: 1em 0;
         box-shadow: -2px 2px 5px var(--dark-color);

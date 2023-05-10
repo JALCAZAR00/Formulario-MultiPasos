@@ -8,7 +8,7 @@ footer{
         justify-content: space-between;
         width: 100%;
         padding: 15px;
-        .back, .next{
+        .back, .next, .btnInit{
             font-size: .8rem;
             font-weight: 600;
             width: 100px;
@@ -34,6 +34,15 @@ footer{
             font-size: .9rem;
             color: var(--white);
             background-color: var(--primary-one-color);
+        }
+        .btnInit{
+            display: none;
+            width: 250px;
+            margin: 0 auto;
+            font-size: 1rem;
+            font-weight: 400s;
+            color: var(--white);
+            background-color: var(--alert-color);
         }
     }
 }

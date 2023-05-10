@@ -2,6 +2,7 @@
 const stepNav = document.querySelector('.four-step-icon')
 const btnBack = document.querySelector('.back');
 const btnNext = document.querySelector('.next');
+const btnInit = document.querySelector('.btnInit');
 
 //Contenedores del main
 const finish = document.querySelector('.finishing');
@@ -61,9 +62,15 @@ btnNext.addEventListener("click", () => {
     thanks.style.display = "flex"
     btnNext.style.display = "none"
     btnBack.style.display = "none"
+    btnInit.style.display = "block"
 });
 
 //Evento del boton Back
 btnBack.addEventListener("click", () =>{
     window.location.href = "./pick-AddsOns.html"
-});   
+});
+
+//Evento del boton Home
+btnInit.addEventListener("click", () => {
+    window.location.href = "./index.html"
+});
