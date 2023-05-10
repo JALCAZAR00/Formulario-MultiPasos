@@ -30,31 +30,46 @@ let selectedServices = JSON.parse(localStorage.getItem('selectedServiceData'));
 
 function createService(){
     const infoAddsContainer = document.querySelector('.info-adds');
-    //Crear servicio en el DOM
-    const container = document.createElement('div');
-    container.classList.add('add');
-  
-    const serviceTitle = document.createElement('p');
-    serviceTitle.textContent = selectedServices.name;
-  
-    const servicePriceElement = document.createElement('span');
-    servicePriceElement.textContent = `$${selectedServices.price}`;
-  
-    container.appendChild(serviceTitle);
-    container.appendChild(servicePriceElement);
-    
-    infoAddsContainer.appendChild(container);
 
-    // Ocultar el contenedor 'add' si no hay datos en el localstorage
-    if (!selectedServices) {
-        container.style.display = 'none';
+    // Obtener los servicios seleccionados del local storage
+    const selectedServices = JSON.parse(localStorage.getItem('selectedServiceData'));
+
+    //Inicializar total a cero
+    let total = 0;
+
+    for (let i = 0; i < selectedServices.length; i++) {
+        const selectedService = selectedServices[i];
+
+        //Crear servicio en el DOM
+        const container = document.createElement('div');
+        container.classList.add('add');
+
+        const serviceTitle = document.createElement('p');
+        serviceTitle.textContent = selectedService.name;
+
+        const servicePriceElement = document.createElement('span');
+        servicePriceElement.textContent = `$${selectedService.price}`;
+
+        container.appendChild(serviceTitle);
+        container.appendChild(servicePriceElement);
+
+        infoAddsContainer.appendChild(container);
+
+        // Ocultar el contenedor 'add' si no hay datos en el localstorage
+        if (!selectedService) {
+            container.style.display = 'none';
+        }
+
+        //Sumar precio del servicio al total
+        total += selectedService.price;
     }
+
+    //Mostrar total en el DOM
+    const totalPrice = document.querySelector('.precio-total');
+    totalPrice.textContent = `(${selectedPlan.plan}) $${total + selectedPlan.price}`;
+
 }
 createService();
-
-//Obtener total
-const totalPrice = document.querySelector('.precio-total');
-totalPrice.textContent = `(${selectedPlan.plan}) $${selectedPlan.price + selectedServices.price}`;
 
 //Evento del boton Next
 btnNext.addEventListener("click", () => {

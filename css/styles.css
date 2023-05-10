@@ -468,6 +468,7 @@ footer .buttons .btnInit {
   font-size: 1rem;
   font-weight: 400s;
   color: var(--white);
+  border: 2px solid var(--alert-color);
   background-color: var(--alert-color);
 }
 

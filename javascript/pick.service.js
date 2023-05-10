@@ -145,24 +145,30 @@ function resetStyles(selectedPlan) {
     }
 }
 
-//Exportar datos de servicios seleccionados
+//Arreglo para guardar los servicios.
+let selectedServices = [];
+
+//Agregar al arreglo los servicios seleccionados.
 function postPlan(service){
-    let selectedServices;
     switch (service) {
         case 'online':
-            selectedServices = activatePlanYearly ? serviceYear[0] : serviceMonth[0];
+            let online = activatePlanYearly ? serviceYear[0] : serviceMonth[0];
+            selectedServices.push(online);
             break;
         case 'storage':
-            selectedServices = activatePlanYearly ? serviceYear[1] : serviceMonth[1];
+            let storage = activatePlanYearly ? serviceYear[1] : serviceMonth[1];
+            selectedServices.push(storage);
             break;
         case 'customizable':
-            selectedServices = activatePlanYearly ? serviceYear[2] : serviceMonth[2];
+            let custom = activatePlanYearly ? serviceYear[2] : serviceMonth[2];
+            selectedServices.push(custom);
             break;
         default : 'No se selecciono ningún servicio'
             break;
     }
     localStorage.setItem('selectedServiceData', JSON.stringify(selectedServices));
 }
+
 
 //Evento del boton Next
 btnNext.addEventListener("click", () => {
