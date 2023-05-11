@@ -54,7 +54,7 @@ emailInput.addEventListener('blur', function() {
 });
 
 phoneInput.addEventListener('blur', function() {
-  if (phoneInput.value.trim() === '') {
+  if (phoneInput.value.length < 10 || phoneInput.value.length > 10) {
     phoneAlert.style.display = 'flex';
     phoneInput.style.border = "1px solid var(--alert-color)";
   } else{
@@ -77,8 +77,9 @@ form.addEventListener('click', function(event) {
     inputStatus = false;
   }
 
-  if (phoneInput.value.length < 10) {
+  if (phoneInput.value.length < 10 || phoneInput.value.length > 10) {
     phoneAlert.style.display = 'flex';
+    phoneAlert.textContent = "Write 10 digits";
     phoneInput.style.border = "1px solid var(--alert-color)";
   }
 
