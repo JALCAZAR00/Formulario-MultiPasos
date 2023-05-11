@@ -538,7 +538,6 @@ header nav ul li {
     grid-template-rows: auto;
     padding: 12px;
     max-width: 900px;
-    margin: 0 auto;
     background-color: var(--white);
   }
   body > *:nth-child(1) {
@@ -547,7 +546,8 @@ header nav ul li {
   }
   body header {
     -ms-grid-column: 1;
-    grid-column: 1/1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1/3;

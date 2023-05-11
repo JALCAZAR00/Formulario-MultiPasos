@@ -79,7 +79,6 @@ form.addEventListener('click', function(event) {
 
   if (phoneInput.value.length < 10 || phoneInput.value.length > 10) {
     phoneAlert.style.display = 'flex';
-    phoneAlert.textContent = "Write 10 digits";
     phoneInput.style.border = "1px solid var(--alert-color)";
   }
 
