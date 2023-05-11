@@ -22,12 +22,19 @@
     margin: 0;
     padding: 0;
 }
+html{
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-four-color);
+}
 body{
     display: grid;
     grid-template-rows: 105px 1fr 50px;
     font-size: 62.5%;
     font-family: 'Ubuntu', sans-serif;
+    border-radius: 1em;
     color: var(--font-color-primary);
+    background-color: var(--white);
 }
 .inactive{
     display: none;

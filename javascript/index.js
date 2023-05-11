@@ -86,4 +86,6 @@ form.addEventListener('click', function(event) {
   if (nameInput.value.trim() !== '' && emailInput.value.trim() !== '' && phoneInput.value.length === 10 && emailStatus === true) {
     window.location.href = "./Select-Plan.html";
   }
+  nameUser = nameInput.value;
+  localStorage.setItem('nameUser', JSON.stringify(nameUser));
 });

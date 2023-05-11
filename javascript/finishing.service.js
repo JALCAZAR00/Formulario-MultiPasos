@@ -25,6 +25,12 @@ function getPlanData(){
 }
 getPlanData();
 
+//Obtener nombre del usuario
+let nameUser = JSON.parse(localStorage.getItem('nameUser'));
+function getNameUser(){
+    let name = document.querySelector('.name-user');
+    name.textContent = nameUser;
+}
 //Exportar servicios al DOM
 let selectedServices = JSON.parse(localStorage.getItem('selectedServiceData'));
 
@@ -78,6 +84,7 @@ btnNext.addEventListener("click", () => {
     btnNext.style.display = "none"
     btnBack.style.display = "none"
     btnInit.style.display = "block"
+    getNameUser();
 });
 
 //Evento del boton Back

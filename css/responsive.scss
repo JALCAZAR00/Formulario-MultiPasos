@@ -1,11 +1,16 @@
 @media screen and  (min-width: 768px) {
+    html{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     body{
         grid-template-columns: auto;
         grid-template-rows: auto;
         padding: 12px;
         max-width: 900px;
         margin: 0 auto;
-        background-color: var(--primary-four-color);
+        background-color: var(--white);
         header{
             grid-column: 1 / 1;
             grid-row: 1 / 3;
@@ -23,13 +28,14 @@
                 ul{
                     width: 25%;
                     flex-direction: column;
-                    gap: 16px;
+                    gap: 20px;
                 }
                 .steps-info{
                     display: flex;
                     flex-direction: column;
-                    gap: 6px;
+                    gap: 10px;
                     width: 80%;
+                    padding-top: 4px;
                     div{
                         padding-top: 30px;
                         h2{
