@@ -9,9 +9,9 @@ const storageContainer = document.querySelector('.larger-storage');
 const customizableContainer = document.querySelector('.cutomizable-profile');
 
 //Input checkbox de adicionales
-const online = document.getElementById('online');
-const storage = document.getElementById('storage');
-const customizable = document.getElementById('customizable');
+const onlineBtn = document.getElementById('online');
+const storageBtn = document.getElementById('storage');
+const customizableBtn = document.getElementById('customizable');
 
 //Precio de adicionales
 const onlinePrice = document.querySelector('.price-add-online');
@@ -77,31 +77,40 @@ let selectStorage = false;
 let selectCustom = false;
 
 //Evento para seleccionar un ons
-online.addEventListener("click", () => {
+onlineContainer.addEventListener("click", () => {
     if(selectOnline === false){
+        onlineBtn.checked = true; 
         getAddOns('online')
-        postPlan('online')  
+        postService('online') 
     }else{
-        resetStyles('online');
         selectOnline = false;
+        onlineBtn.checked = false; 
+        resetStyles('online');
+        deleteService('online')
     }
 });
-storage.addEventListener("click", function() {
+storageContainer.addEventListener("click", function() {
     if(selectStorage === false){
+        storageBtn.checked = true; 
         getAddOns('storage')
-        postPlan('storage')
+        postService('storage')
     }else{
-        resetStyles('storage');
         selectStorage = false;
+        storageBtn.checked = false;
+        resetStyles('storage');
+        deleteService('storage');
     }
 });
-customizable.addEventListener("click", () => {
+customizableContainer.addEventListener("click", () => {
     if(selectCustom === false){
+        customizableBtn.checked = true;
         getAddOns('customizable')
-        postPlan('customizable')
+        postService('customizable')
     }else{
-        resetStyles('customizable');
         selectCustom = false;
+        customizableBtn.checked = false;
+        resetStyles('customizable');
+        deleteService('customizable');
     }
 });
 
@@ -145,23 +154,36 @@ function resetStyles(selectedPlan) {
     }
 }
 
-//Arreglo para guardar los servicios.
+//Arreglo para guardar los servicios
 let selectedServices = [];
+let deleteServices = false;
 
-//Agregar al arreglo los servicios seleccionados.
-function postPlan(service){
+//Agregar al arreglo los servicios seleccionados
+function postService(service){
     switch (service) {
         case 'online':
             let online = activatePlanYearly ? serviceYear[0] : serviceMonth[0];
-            selectedServices.push(online);
+            if(deleteServices === false){
+                selectedServices.splice(0, 0, online); 
+            }else{
+                selectedServices.splice(0, 1, online);
+            }
             break;
         case 'storage':
             let storage = activatePlanYearly ? serviceYear[1] : serviceMonth[1];
-            selectedServices.push(storage);
+            if(deleteServices === false){
+            selectedServices.splice(1, 0, storage);
+            }else{
+                selectedServices.splice(1, 1, storage);
+            }
             break;
         case 'customizable':
             let custom = activatePlanYearly ? serviceYear[2] : serviceMonth[2];
-            selectedServices.push(custom);
+            if(deleteServices === false){
+            selectedServices.splice(2, 0, custom);
+            }else{
+                selectedServices.splice(2, 1, custom);
+            }
             break;
         default : 'No se selecciono ningún servicio'
             break;
@@ -169,9 +191,39 @@ function postPlan(service){
     localStorage.setItem('selectedServiceData', JSON.stringify(selectedServices));
 }
 
+//Eliminar del arreglo los servicios
+function deleteService(service){
+    switch (service) {
+        case 'online':
+            delete selectedServices[0]
+            deleteServices = true;
+            break;
+        case 'storage':
+            delete selectedServices[1]
+            deleteServices = true;
+            break;
+        case 'customizable':
+            delete selectedServices[2]
+            deleteServices = true;
+            break;
+        default : 'No se selecciono ningún servicio'
+            break;
+    }
+    localStorage.setItem('selectedServiceData', JSON.stringify(selectedServices));
+    //return selectedServices;
+}
+
+//Eliminar los elementos null del array
+function updateServices(){
+    selectedServices = selectedServices.filter(elemento => elemento !== "");
+    localStorage.setItem('selectedServiceData', JSON.stringify(selectedServices));
+}
 
 //Evento del boton Next
 btnNext.addEventListener("click", () => {
+    if(deleteServices === true){
+        updateServices();
+    }
     window.location.href = "./finishing.html"
 });
 

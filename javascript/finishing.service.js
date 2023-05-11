@@ -32,7 +32,7 @@ function createService(){
     const infoAddsContainer = document.querySelector('.info-adds');
 
     // Obtener los servicios seleccionados del local storage
-    const selectedServices = JSON.parse(localStorage.getItem('selectedServiceData'));
+    //const selectedServices = JSON.parse(localStorage.getItem('selectedServiceData'));
 
     //Inicializar total a cero
     let total = 0;
